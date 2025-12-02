@@ -1,0 +1,118 @@
+/* --- GLOBAL STYLE --- */
+:root {
+    --accent-color: #008cad; /* Warna Teal Utama FindKos */
+}
+
+body {
+    background-color: #f8f9fa;
+    font-family: "Roboto", system-ui, -apple-system, sans-serif;
+}
+
+/* --- SIDEBAR --- */
+.sidebar {
+    width: 240px;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #343a40;
+    padding-top: 20px;
+    z-index: 1000;
+}
+
+.sidebar h5 {
+    font-weight: 600;
+}
+
+.sidebar a {
+    color: #ffffff;
+    padding: 12px 20px;
+    display: block;
+    text-decoration: none;
+    transition: all .2s ease-in-out;
+    border-left: 4px solid transparent; /* Untuk indikator aktif */
+}
+
+.sidebar a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding-left: 25px; /* Efek geser sedikit */
+}
+
+.sidebar a.active {
+    background-color: #ffffff;
+    color: #000;
+    font-weight: 600;
+    border-radius: 8px 0 0 8px; /* Radius cuma di kiri */
+    margin-left: 10px; /* Supaya terlihat seperti kartu */
+    border-left: 4px solid var(--accent-color);
+}
+
+.content {
+    margin-left: 240px;
+    padding: 30px; /* Padding sedikit diperbesar biar lega */
+}
+
+/* --- DASHBOARD CARDS & STATS --- */
+.card-stat {
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background: #fff;
+    overflow: hidden;
+}
+
+.card-stat:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.card-stat .icon-box {
+    width: 50px;
+    height: 50px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+}
+
+/* Warna Background Soft */
+.bg-light-primary { background-color: rgba(0, 140, 173, 0.1); color: var(--accent-color); }
+.bg-light-success { background-color: rgba(25, 135, 84, 0.1); color: #198754; }
+.bg-light-warning { background-color: rgba(255, 193, 7, 0.1); color: #ffc107; }
+.bg-light-info { background-color: rgba(13, 202, 240, 0.1); color: #0dcaf0; }
+
+/* --- TABLE STYLING --- */
+.table-dashboard thead th {
+    background-color: #f8f9fa;
+    color: #6c757d;
+    font-weight: 600;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    border-bottom: 2px solid #edf2f9;
+}
+
+/* --- BUTTONS & LISTS --- */
+.btn-accent {
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    transition: 0.3s;
+}
+
+.btn-accent:hover {
+    background-color: #00708a;
+    color: white;
+    box-shadow: 0 4px 10px rgba(0, 140, 173, 0.3);
+}
+
+.list-validation .list-group-item {
+    border: none;
+    border-bottom: 1px solid #f0f0f0;
+    padding: 15px 0;
+}
+
+.list-validation .list-group-item:last-child {
+    border-bottom: none;
+}

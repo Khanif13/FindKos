@@ -19,8 +19,10 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'name',
+        'username',
         'email',
         'password',
+        'role',
     ];
 
     /**
@@ -44,5 +46,17 @@ class User extends Authenticatable
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
         ];
+    }
+
+    // Relasi: User (Owner) punya banyak Kos
+    public function kos()
+    {
+        return $this->hasMany(Kos::class);
+    }
+
+    // Relasi: User (Penyewa) punya banyak Booking
+    public function bookings()
+    {
+        return $this->hasMany(Booking::class);
     }
 }
